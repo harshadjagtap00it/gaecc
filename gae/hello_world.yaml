@@ -1,0 +1,15 @@
+name: hello-world
+runtime: python38
+
+executors:
+  default:
+    runtime: python38
+    container:
+      image: python:3.8
+
+functions:
+  hello:
+    handler: hello_world.handler
+    runtime: default
+    events:
+      - http: GET /
